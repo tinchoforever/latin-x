@@ -49,6 +49,8 @@ angular.module('initApp')
       $rootScope.lastAnswer = {
         result : false,
       }
+
+      socket.emit('new-user', {user:'name', location:'location'}, function (answer) {});
       $location.path('pregunta');
 
       
@@ -64,12 +66,8 @@ angular.module('initApp')
     $rootScope.responder = function(c){
       var res = $rootScope.currentCheck['Resultado chequeo'];
 
-      // socket.emit('user-vote', function(msg){
-      //       alert(msg);
-      //     });
-      //     socket.on('user-vote', function(msg){
-      //       alert(msg);
-      //     });
+      socket.emit('user-vote', c, function (answer) {});
+     
       $rootScope.currentCheck.tuRespuesta = c;
       $rootScope.lastAnswer.answer = c;
       
