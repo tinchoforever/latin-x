@@ -50,7 +50,6 @@
 
 * {
     font-family: 'American Typewriter', Arial, sans-serif;
-    color: #333;
 }
 
 html{
@@ -64,6 +63,15 @@ a{
     color:white;
     text-decoration: none;
 }
+
+
+.option{
+    height: 40vh;
+    background-position: center;
+    background-size: cover;
+}
+
+
 
 .wrapper {
     max-width: 1280px;
@@ -115,9 +123,13 @@ a{
     text-align: center;
 }
 .btn.share {
-    border-radius: 27px;
-    width: 42px;
+    border-radius: 38px;
+    width: 70px;
     text-align: center;
+    color: white !important;
+}
+a{
+    color:white;
 }
 .has-margin-top {
     margin-top: 3em;

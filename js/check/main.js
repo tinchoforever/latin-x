@@ -21,11 +21,28 @@ angular.module('initApp')
     $rootScope.startGame = function(){
       
       $rootScope.gameFinish = false;
+       
+      var  l = $rootScope.readyToCheck.length;
+      var top = l;
+      var bottom = 0 
       
+      var l1 = shuffle($rootScope.readyToCheck.map(function(m){ return m;}));
+      var l2 = shuffle($rootScope.readyToCheck);
+
+      var q = [];
+      for(var i = 0; i < l1.length; i++) {
+        q.push({
+          l: l1[i],
+          r: l2[i]
+        });
+      }
+
+      console.log(q);
+
       $rootScope.currentGame = {
         points:0,
-        remaing: 5,
-        questions: shuffle($rootScope.readyToCheck).slice(0,5)
+        remaing: top,
+        questions: q,
       }
       $rootScope.currentCheck = $rootScope.currentGame.questions[$rootScope.currentGame.remaing-1];
     
@@ -49,16 +66,13 @@ angular.module('initApp')
 
       $rootScope.currentCheck.tuRespuesta = c;
       $rootScope.lastAnswer.answer = c;
-      $rootScope.lastAnswer.result = c.toLowerCase().trim() ===res.toLowerCase().trim();
-      if ($rootScope.lastAnswer.result){
-        $rootScope.currentGame.points++;
-      }
-      $rootScope.onQuestion =false;
-      $rootScope.onAnswer = true;
-     
+      
       $rootScope.currentGame.remaing--;
        if ($rootScope.currentGame.remaing == 0){
           $rootScope.gameFinish = true;
+      }
+      else {
+        
       }
       $location.path('respuesta');
 
@@ -68,9 +82,7 @@ angular.module('initApp')
         $rootScope.checks = data;
         $rootScope.readyToCheck = [];
         data.map(function(d){
-          if (d['Resultado chequeo'] != ''){
             $rootScope.readyToCheck.push(d);
-          }
         });
         
        
