@@ -64,6 +64,12 @@ angular.module('initApp')
     $rootScope.responder = function(c){
       var res = $rootScope.currentCheck['Resultado chequeo'];
 
+      // socket.emit('user-vote', function(msg){
+      //       alert(msg);
+      //     });
+      //     socket.on('user-vote', function(msg){
+      //       alert(msg);
+      //     });
       $rootScope.currentCheck.tuRespuesta = c;
       $rootScope.lastAnswer.answer = c;
       
@@ -72,7 +78,7 @@ angular.module('initApp')
           $rootScope.gameFinish = true;
       }
       else {
-        
+
       }
       $location.path('respuesta');
 
