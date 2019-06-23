@@ -29,10 +29,8 @@ angular.module('initApp',['ngRoute', 'ngAnimate'])
 });
  
 new WOW().init();
-       $(function () {
-          var socket = io('https://latin-x-map.herokuapp.com/');
-          
-        });
+ var socket = io('https://latin-x-map.herokuapp.com/');
+       
            
 /**
  * Returns a random number between min (inclusive) and max (exclusive)
