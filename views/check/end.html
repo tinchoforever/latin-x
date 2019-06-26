@@ -39,9 +39,19 @@
                 <hr/>
 
                  
-              <h2 class="center no-click"> <strong> Resumen de tu Juego </strong> </h2>
+             
+            <h2 class="center no-click"> <strong> Resumen de tu Juego </strong> </h2>
    
-        </div>
+            <div ng-repeat="q in currentGame.questions">
+             <hr/>
+              <div class="row">
+                       <div class="col-xs-12 col-md-6 ">
+                         <div class=" wow slideInRight option" data-wow-delay="3.3s" ng-click="responder(currentCheck.l)" style="background-image: url(images/{{q.tuRespuesta.filename}}">
+                           
+                        </div>
+                      </div>
+            </div>
+        
     </div>
 
    
