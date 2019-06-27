@@ -1,9 +1,9 @@
 'use strict';
-
+var myWordCloud;
 angular.module('initApp')
   .controller('mainController', function ($scope, $rootScope, $location) {
     var url = 'data.csv';
-
+    $rootScope.words = [];
     $rootScope.currentGame = {
       points:0,
       remaing: 5,
@@ -80,16 +80,58 @@ angular.module('initApp')
       }
       $location.path('respuesta');
 
+
+              for (var i = 0; i < $rootScope.readyToCheck.length; i++) {
+                var z = $rootScope.readyToCheck[i];
+                if (z.filename === c.filename){
+                  z.words.map(function(w){
+                     $rootScope.words.map(function(ww){
+                       if (w == ww.key){
+                         ww.count++;
+                         ww.size = ww.count ;
+                       }
+                     })
+                  })
+
+                }
+              }
+              
+                
+              
+
     }
   	d3.csv(url, function(data){
       $rootScope.$apply(function(){
         $rootScope.checks = data;
         $rootScope.readyToCheck = [];
-        data.map(function(d){
+        data.map(function(d,i){
+            d.votes = 0;
+            d.order = i;
+            d.percentage = 0;
+            d.words = d.tags.split(',').map(function(tag){
+              tag = tag.replace('#','').trim();
+              if (tag != ''){
+                $rootScope.words.push(tag);
+              }
+              return tag;
+            });
+            
             $rootScope.readyToCheck.push(d);
+
         });
         
-       
+        $rootScope.words= d3.nest()
+              .key(function(d) {
+                return d;
+              })
+              .entries($rootScope.words);
+       $rootScope.words = $rootScope.words.map(function(w){
+         w.count = 0;
+         w.size = 0;
+         w.text = w.key;
+         return w;
+       });
+
       });
     });
 

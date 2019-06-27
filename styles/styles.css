@@ -2,48 +2,48 @@
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter-CondensedBold.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter-CondensedBold.woff') format('woff');
+    src: url('fonts/AmericanTypewriter-CondensedBold.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter-CondensedBold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter-CondensedLight.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter-CondensedLight.woff') format('woff');
+    src: url('fonts/AmericanTypewriter-CondensedLight.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter-CondensedLight.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter.woff') format('woff');
+    src: url('fonts/AmericanTypewriter.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter-Light.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter-Light.woff') format('woff');
+    src: url('fonts/AmericanTypewriter-Light.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter-Condensed.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter-Condensed.woff') format('woff');
+    src: url('fonts/AmericanTypewriter-Condensed.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter-Condensed.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'American Typewriter';
-    src: url('styles/fonts/AmericanTypewriter-Bold.woff2') format('woff2'),
-        url('styles/fonts/AmericanTypewriter-Bold.woff') format('woff');
+    src: url('fonts/AmericanTypewriter-Bold.woff2') format('woff2'),
+        url('fonts/AmericanTypewriter-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
